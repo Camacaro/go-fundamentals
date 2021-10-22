@@ -39,4 +39,13 @@ func main() {
 	const baseCuadrado = 10
 	areaCuadrado := baseCuadrado * baseCuadrado
 	fmt.Println("Area cuadrado es:", areaCuadrado)
+
+	fmt.Println("======== Ejercicio 5 - Operadores arimeticos =========")
+	x := 10
+	y := 50
+	result := x + y
+	fmt.Println("Suma:", result)
+
+	result = y - x
+	fmt.Println("Resta:", result)
 }
