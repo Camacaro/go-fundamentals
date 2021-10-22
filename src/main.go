@@ -23,7 +23,7 @@ func main() {
 	fmt.Println("altura:", altura)
 	fmt.Println("area:", area)
 
-	fmt.Println("======== Ejercicio 3 =========")
+	fmt.Println("======== Ejercicio 3 - Zero values =========")
 	// Zero values - Valores por defecto
 	var a int
 	var b float64
@@ -34,8 +34,8 @@ func main() {
 	fmt.Println("Strings:", c) // Es un string vacio
 	fmt.Println("Booleanas:", d)
 
-	fmt.Println("======== Ejercicio 4 =========")
-	// Area Cuadradp
+	fmt.Println("======== Ejercicio 4 - Area Cuadrado =========")
+	// Area Cuadrado
 	const baseCuadrado = 10
 	areaCuadrado := baseCuadrado * baseCuadrado
 	fmt.Println("Area cuadrado es:", areaCuadrado)
@@ -48,4 +48,34 @@ func main() {
 
 	result = y - x
 	fmt.Println("Resta:", result)
+
+	result = y * x
+	fmt.Println("Multiplicacion:", result)
+
+	result = y / x
+	fmt.Println("Division:", result)
+
+	result = y % x
+	fmt.Println("Modulo o residuo:", result)
+
+	x++
+	fmt.Println("Incremental:", x)
+
+	x--
+	fmt.Println("Decremental:", x)
+
+	fmt.Println("======== Ejercicio 6 - Reto: Area de un rectangulo, trapecio y circulo =========")
+	// Reto: Area de un rectangulo, trapecio y circulo
+	baseSmall := 4
+	baseTall := 6
+	radio := 4
+
+	areaRectangulo := baseSmall * altura
+	areaTrapecio := altura * ((baseSmall + baseTall) / 2)
+	areaCirculo := pi * float64((radio * radio))
+
+	fmt.Println("areaRectangulo:", areaRectangulo)
+	fmt.Println("areaTrapecio:", areaTrapecio)
+	fmt.Println("areaCirculo:", areaCirculo)
+
 }
