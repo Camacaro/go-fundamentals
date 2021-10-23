@@ -2,56 +2,38 @@ package main
 
 import "fmt"
 
-func normalFunction(message string) {
-	fmt.Println(message)
-}
-
-// Normal( a int, b int, c string) -> Buena Practica (a, b int, c string)
-func tripeArgument(a, b int, c string) {
-	fmt.Println(a, b, c)
-}
-
-func returnValue(a int) int {
-	return a * 2
-}
-
-func doubleReturn(a int) (c, d int) {
-	return a, a * 2
-}
-
-func areaRectangulo(base, altura int) int {
-	return base * altura
-}
-
-func areaTrapecio(baseSmall, baseTall, altura int) int {
-	return altura * ((baseSmall + baseTall) / 2)
-}
-
-func areaCirculo(radio int) float64 {
-	const pi float64 = 3.141516
-	return pi * float64((radio * radio))
-}
-
 func main() {
-	normalFunction("Hola Mundo")
-	tripeArgument(1, 2, "Hola")
 
-	value := returnValue(2)
-	fmt.Println("value", value)
+	fmt.Println("============== Ejecicio 1 - For Condicional ==================")
+	for i := 0; i < 10; i++ {
+		fmt.Println(i)
+	}
 
-	value1, value2 := doubleReturn(2)
-	fmt.Println("doubleReturn - value1, value2 -", value1, value2)
+	fmt.Println("============== Ejecicio 2 - For While ==================")
+	counter := 0
+	for counter < 10 {
+		fmt.Println(counter)
+		counter++
+	}
 
-	value11, _ := doubleReturn(2)
-	fmt.Println("doubleReturn - value11", value11)
+	fmt.Println("============== Ejecicio 3 - For forever ==================")
+	counterForever := 0
+	for {
+		fmt.Println(counterForever)
+		counterForever++
+		if counterForever == 10 {
+			break
+		}
+	}
 
-	_, value22 := doubleReturn(2)
-	fmt.Println("doubleReturn - value22", value22)
+	fmt.Println("============== Ejecicio 4 - For Range  ==================")
+	listaNumerosPares := []int{2, 4, 6, 8, 10, 12, 14, 16, 18, 20}
+	for i, par := range listaNumerosPares {
+		fmt.Printf("posicion %d número par: %d \n", i, par)
+	}
 
-	fmt.Println("=============== Reto ====================")
-	rectangulo := areaRectangulo(10, 5)
-	trapecio := areaTrapecio(3, 6, 4)
-	circulo := areaCirculo(3)
-
-	fmt.Printf("Area del rectangulo: %d, Area del trapecio: %d, Area del circulo: %b \n", rectangulo, trapecio, circulo)
+	fmt.Println("============== Reto  ==================")
+	for i := 10; i > 0; i-- {
+		fmt.Println(i)
+	}
 }
