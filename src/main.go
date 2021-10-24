@@ -1,53 +1,69 @@
 package main
 
-import "fmt"
+// import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
-func main() {
-	fmt.Println("============== Ejercicio 1 -  ==================")
-}
-package main
-
-import "fmt"
-
-func closeDb() {
-	fmt.Println("close db")
-}
-
-func main() {
-
-	fmt.Println("============== Ejecicio 1 - El uso de los keywords defer ==================")
-	// Antes de morir el codigo se ejecuta el defer
-	// Lo que hace es ejecutar la ultima funcion antes de que termine el programa
-	// Case de uso que cierre la coneccion a la base de datos
-	// Case de uso que un cierre el archivo al terminar el programa
-	// Las buenas practicas dicen que solo se debe usar un defer por programa
-	// La secuencia con mas de un defer es de la ultima a la primera
-
-	// Antes de probrar el ejemplo de defer, comenta el otro ejercicio
-	// defer fmt.Println("!!!")  // Se ejecuta de tercero
-	// defer fmt.Println("Hola") // Se ejecuta segundo
-	// fmt.Println("Mundo")      // Se ejecuta primero
-
-	fmt.Println("============== Ejecicio 2 - El uso de los keywords continue y break ==================")
-	for i := 0; i < 10; i++ {
-		fmt.Println(i)
-
-		if i == 2 {
-			fmt.Println("Es 2")
-			continue
-		}
-
-		if i == 8 {
-			fmt.Println("Break")
-			break
+func isPalindromeCopilot(word string) bool {
+	for i := 0; i < len(word)/2; i++ {
+		if word[i] != word[len(word)-1-i] {
+			fmt.Printf("The word %s is not a palindrome \n", word)
+			return false
 		}
 	}
+	fmt.Printf("The word %s is a palindrome \n", word)
+	return true
+}
 
-fmt.Println("============== Reto - Close DB ==================")
-defer closeDb()
-fmt.Println("main")
-fmt.Println("Se abre conexion db")
-fmt.Println("Se guargo item en db")
-fmt.Println("Se retorna valor")
+func isPalindrome(text string) {
+	var textReverse string
 
+	for i := len(text) - 1; i >= 0; i-- {
+		textReverse += string(text[i])
+	}
+
+	if strings.ToLower(text) == strings.ToLower(textReverse) {
+		fmt.Printf("The word %s is a palindrome \n", text)
+	} else {
+		fmt.Printf("The word %s is not a palindrome \n", text)
+	}
+}
+
+func main() {
+
+	fmt.Println("============== Ejercicio 1 - Recorrido de Slices con Range ==================")
+	slice := []string{"Hola", "que", "tal", "?"}
+
+	fmt.Println("============== Inidce, valor")
+	for indice, value := range slice {
+		fmt.Println("Inidce, valor", indice, value)
+	}
+
+	fmt.Println("============== Solo valor")
+	for _, value := range slice {
+		fmt.Println("valor", value)
+	}
+
+	fmt.Println("============== Solo Indice")
+	for indice := range slice {
+		fmt.Println("indice", indice)
+	}
+
+	fmt.Println("============== Ejercicio 2 - isPalindrome ==================")
+	isPalindrome("radar")
+	isPalindrome("amor")
+	isPalindrome("amor a roma")
+	isPalindrome("casas")
+	isPalindrome("ama")
+	isPalindrome("Ama")
+
+	fmt.Println("============== Ejercicio 3 - isPalindromeCopilot ==================")
+	isPalindromeCopilot("radar")
+	isPalindromeCopilot("amor")
+	isPalindromeCopilot("amor a roma")
+	isPalindromeCopilot("casas")
+	isPalindromeCopilot("ama")
+	isPalindromeCopilot("Ama")
 }
