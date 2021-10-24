@@ -2,6 +2,10 @@
 
 // import "fmt"
 
+// func closeDb() {
+// 	fmt.Println("close db")
+// }
+
 // func main() {
 
 // 	fmt.Println("============== Ejecicio 1 - El uso de los keywords defer ==================")
@@ -31,5 +35,12 @@
 // 			break
 // 		}
 // 	}
+
+// fmt.Println("============== Reto - Close DB ==================")
+// defer closeDb()
+// fmt.Println("main")
+// fmt.Println("Se abre conexion db")
+// fmt.Println("Se guargo item en db")
+// fmt.Println("Se retorna valor")
 
 // }
