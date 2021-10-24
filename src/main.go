@@ -3,51 +3,47 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println("============== Ejercicio 1 -  ==================")
-}
-package main
 
-import "fmt"
+	/**
+	En Go, los arrays poseen un tamaño fijo y son inmutables,
+	mientras que en los slices su tamaño es dinámico y los puedes modificar.
+	*/
 
-func closeDb() {
-	fmt.Println("close db")
-}
+	fmt.Println("============== Ejercicio 1 - Arrays Inmutables ==================")
+	// NOMBRE_VARIABLE := [LONGITUD]TIPO_DATO
+	// var nombre_variable [LONGITUD]tipo_dato
+	var array [4]int
+	fmt.Println("inicio array", array)
 
-func main() {
+	array[0] = 1
+	array[1] = 2
+	fmt.Println("con values array", array)
 
-	fmt.Println("============== Ejecicio 1 - El uso de los keywords defer ==================")
-	// Antes de morir el codigo se ejecuta el defer
-	// Lo que hace es ejecutar la ultima funcion antes de que termine el programa
-	// Case de uso que cierre la coneccion a la base de datos
-	// Case de uso que un cierre el archivo al terminar el programa
-	// Las buenas practicas dicen que solo se debe usar un defer por programa
-	// La secuencia con mas de un defer es de la ultima a la primera
+	fmt.Println("Longitud", len(array))
+	fmt.Println("Capacidad maxima del array", cap(array))
 
-	// Antes de probrar el ejemplo de defer, comenta el otro ejercicio
-	// defer fmt.Println("!!!")  // Se ejecuta de tercero
-	// defer fmt.Println("Hola") // Se ejecuta segundo
-	// fmt.Println("Mundo")      // Se ejecuta primero
+	fmt.Println("============== Ejercicio 2 - Slice ==================")
+	// es como un array, pero no se le indica la cantidad de elementos que tendra
+	slice := []int{0, 1, 2, 3, 4, 5, 6}
+	fmt.Println("inicio slice", slice)
+	fmt.Println("Longitud", len(slice))
+	fmt.Println("Capacidad maxima del slice", cap(slice))
 
-	fmt.Println("============== Ejecicio 2 - El uso de los keywords continue y break ==================")
-	for i := 0; i < 10; i++ {
-		fmt.Println(i)
+	fmt.Println("============== Ejercicio 3 - Metodos en el Slice ==================")
+	fmt.Println("Primer elemento", slice[0])
+	//  slice[INCLUSIVO:EXCLUSIVO]
+	fmt.Println("Primer elemento hasta el indice 3", slice[:3])
+	fmt.Println("Elemtos desde el indice 2 hasta 4 (No imprime el elemento 4)", slice[2:4])
+	fmt.Println("Elemtos desde el indice 4", slice[4:])
 
-		if i == 2 {
-			fmt.Println("Es 2")
-			continue
-		}
+	fmt.Println("============== Ejercicio 4 - Append  ==================")
+	// Agregar un elemento
+	slice = append(slice, 7)
+	fmt.Println("Se agrego un elemento", slice)
 
-		if i == 8 {
-			fmt.Println("Break")
-			break
-		}
-	}
-
-fmt.Println("============== Reto - Close DB ==================")
-defer closeDb()
-fmt.Println("main")
-fmt.Println("Se abre conexion db")
-fmt.Println("Se guargo item en db")
-fmt.Println("Se retorna valor")
-
+	// Agregar varios elementos
+	newSlice := []int{8, 9, 10}
+	// spread operator (...) para agregar varios elementos destructurando el slice
+	slice = append(slice, newSlice...)
+	fmt.Println("Se agrego varios elemento", slice)
 }
