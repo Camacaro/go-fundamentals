@@ -3,51 +3,50 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println("============== Ejercicio 1 -  ==================")
-}
-package main
+	/**
+	La estructura de datos MAP son más eficientes que los Array o Slices,
+	ya que usan de forma nativa concurrencia para ejecutar las operaciones.
+	*/
+	// Diccionario python - Objectos en Javascript
+	fmt.Println("============== Ejercicio 1 - Llave valor con Maps  ==================")
+	m := make(map[string]int)
 
-import "fmt"
+	m["Jose"] = 14
+	m["Juan"] = 20
 
-func closeDb() {
-	fmt.Println("close db")
-}
+	// map[Jose:14 Juan:20]
+	fmt.Println(m)
 
-func main() {
-
-	fmt.Println("============== Ejecicio 1 - El uso de los keywords defer ==================")
-	// Antes de morir el codigo se ejecuta el defer
-	// Lo que hace es ejecutar la ultima funcion antes de que termine el programa
-	// Case de uso que cierre la coneccion a la base de datos
-	// Case de uso que un cierre el archivo al terminar el programa
-	// Las buenas practicas dicen que solo se debe usar un defer por programa
-	// La secuencia con mas de un defer es de la ultima a la primera
-
-	// Antes de probrar el ejemplo de defer, comenta el otro ejercicio
-	// defer fmt.Println("!!!")  // Se ejecuta de tercero
-	// defer fmt.Println("Hola") // Se ejecuta segundo
-	// fmt.Println("Mundo")      // Se ejecuta primero
-
-	fmt.Println("============== Ejecicio 2 - El uso de los keywords continue y break ==================")
-	for i := 0; i < 10; i++ {
-		fmt.Println(i)
-
-		if i == 2 {
-			fmt.Println("Es 2")
-			continue
-		}
-
-		if i == 8 {
-			fmt.Println("Break")
-			break
-		}
+	fmt.Println("============== Ejercicio 2 - Recorrrer el mapa ==================")
+	// Estos recorridos son para iterar, pero no saldran de la misma forma
+	// porque no se sabe en que orden se imprimen los valores
+	// ya que esto se ejecuta de forma recurrente
+	for key, value := range m {
+		fmt.Println(key, value)
 	}
 
-fmt.Println("============== Reto - Close DB ==================")
-defer closeDb()
-fmt.Println("main")
-fmt.Println("Se abre conexion db")
-fmt.Println("Se guargo item en db")
-fmt.Println("Se retorna valor")
+	fmt.Println("============== Ejercicio 3 - Encontrar el valorw ==================")
+	value := m["Jose"]
+	fmt.Println("value", value)
 
+	// Maria no existe pero como es un valor int te lanzara el zero value
+	// Em int el zero value es 0
+	value2, ok := m["Maria"]
+	fmt.Println("value2 - zero value - not fount key", value2)
+	fmt.Println("Existe el valor", ok)
+
+	value3, ok := m["Juan"]
+	fmt.Println("value3", value3)
+	fmt.Println("Existe el valor", ok)
+
+	fmt.Println("============== Ejercicio 4 - Otra Forma de definir Map ==================")
+	temperature := map[string]int{
+		"Earth":  15,
+		"Mars":   -65,
+		"Saturn": -100,
+	}
+
+	fmt.Println("temperature", temperature)
+	delete(temperature, "Saturn")
+	fmt.Println("temperature", temperature)
 }
