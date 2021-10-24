@@ -4,5 +4,5 @@ import "fmt"
 
 func main() {
 
-	fmt.Println("============== Reto - Close DB ==================")
+	fmt.Println("============== Ejercicio 1 -  ==================")
 }
