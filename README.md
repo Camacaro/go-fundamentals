@@ -1,4 +1,5 @@
 # Concurrencia y Paralelismo
+[Programación concurrente](https://ferestrepoca.github.io/paradigmas-de-programacion/progconcurrente/concurrente_teoria/index.html)
 
 ## Concurrencia
 Hay Concurrencia entre varios procesos cuando existen al mismo tiempo. Un ejemplo de esto es que el programa manda a ejecutar 4 tareas a un procesador y éste le asigna un pequeño tiempo a cada tarea 
