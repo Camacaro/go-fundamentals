@@ -2,13 +2,6 @@ package main
 
 import "fmt"
 
-func main() {
-	fmt.Println("============== Ejercicio 1 -  ==================")
-}
-package main
-
-import "fmt"
-
 func closeDb() {
 	fmt.Println("close db")
 }
@@ -43,11 +36,11 @@ func main() {
 		}
 	}
 
-fmt.Println("============== Reto - Close DB ==================")
-defer closeDb()
-fmt.Println("main")
-fmt.Println("Se abre conexion db")
-fmt.Println("Se guargo item en db")
-fmt.Println("Se retorna valor")
+	fmt.Println("============== Reto - Close DB ==================")
+	defer closeDb()
+	fmt.Println("main")
+	fmt.Println("Se abre conexion db")
+	fmt.Println("Se guargo item en db")
+	fmt.Println("Se retorna valor")
 
 }
