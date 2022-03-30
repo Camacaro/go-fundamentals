@@ -20,7 +20,7 @@ func main() {
 
 	*b = 100
 	// Cambia el valor de a, ya que ambos apuntan al mismo espacio de memoria
-	fmt.Println("Valor de a:", 100) // 100
+	fmt.Println("Valor de a:", a) // 100
 
 	// Se usa muchos los punteros hacer funciones mas customizadas
 	// y para pasar llevvar funciones hacias otros paquetes mucho mas eficiente
